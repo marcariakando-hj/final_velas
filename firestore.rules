@@ -1,0 +1,32 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public store catalog items (candles, sculptures, customizer options)
+    match /candles/{candleId} {
+      allow read: if true;
+      allow write: if true; // Allows admin dashboard persistence
+    }
+
+    match /sculptures/{sculptureId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /customizer_options/{optionId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /app_metadata/{metaId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Reviews & Comments system
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

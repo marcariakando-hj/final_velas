@@ -1,0 +1,105 @@
+{
+  "entities": {
+    "CandleProduct": {
+      "title": "CandleProduct",
+      "description": "Artisan candle product with 2D layers and customizer configuration",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "price": { "type": "number" },
+        "image": { "type": "string" },
+        "backgroundImage": { "type": "string" },
+        "backgroundOpacity": { "type": "number" },
+        "layers2D": { "type": "array" },
+        "wickX": { "type": "number" },
+        "wickY": { "type": "number" },
+        "botanicalsX": { "type": "number" },
+        "botanicalsY": { "type": "number" },
+        "botanicalsRadius": { "type": "number" },
+        "waxMaskPolygon": { "type": "string" },
+        "customizer2DConfig": { "type": "object" },
+        "inStock": { "type": "boolean" },
+        "featured": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "name", "price"]
+    },
+    "SculptedFigure": {
+      "title": "SculptedFigure",
+      "description": "2D sculpted figure with layered relief components and anchors",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "image": { "type": "string" },
+        "backgroundImage": { "type": "string" },
+        "backgroundOpacity": { "type": "number" },
+        "priceAddon": { "type": "number" },
+        "layers2D": { "type": "array" },
+        "wickX": { "type": "number" },
+        "wickY": { "type": "number" },
+        "botanicalsX": { "type": "number" },
+        "botanicalsY": { "type": "number" },
+        "botanicalsRadius": { "type": "number" },
+        "waxMaskPolygon": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "CustomizerOptions": {
+      "title": "CustomizerOptions",
+      "description": "Catalog of vessels, wax colors, wicks, botanicals and label styles",
+      "type": "object",
+      "properties": {
+        "vessels": { "type": "array" },
+        "waxColors": { "type": "array" },
+        "wicks": { "type": "array" },
+        "botanicals": { "type": "array" },
+        "labelStyles": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "CandleReview": {
+      "title": "CandleReview",
+      "description": "User reviews and testimonials for candles and brand experience",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "author": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "rating": { "type": "number" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "comment": { "type": "string" },
+        "location": { "type": "string" },
+        "candleName": { "type": "string" },
+        "candleId": { "type": "string" },
+        "verified": { "type": "boolean" }
+      },
+      "required": ["id", "author", "rating", "comment"]
+    }
+  },
+  "firestore": {
+    "candles/{candleId}": {
+      "schema": "CandleProduct",
+      "description": "Catalog of candle products with their layer configurations"
+    },
+    "sculptures/{sculptureId}": {
+      "schema": "SculptedFigure",
+      "description": "Global 2D relief sculptures and their layer configurations"
+    },
+    "customizer_options/{optionId}": {
+      "schema": "CustomizerOptions",
+      "description": "Global customizer catalog options"
+    },
+    "reviews/{reviewId}": {
+      "schema": "CandleReview",
+      "description": "Customer comments and ratings"
+    }
+  }
+}

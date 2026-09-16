@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FDFBF9;
+    color: #423D33;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+.bento-dot-pattern {
+  background-image: radial-gradient(#D9C5B2 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+}
+
+.bento-dot-pattern-dense {
+  background-image: radial-gradient(#D9C5B2 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.05, 0.95) rotate(1.5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.96, 1.04) rotate(-0.5deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.02, 0.98) rotate(1deg);
+    opacity: 1;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 0.6s infinite ease-in-out alternate;
+}
+

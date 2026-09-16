@@ -1,0 +1,8 @@
+{
+  "name": "Remix AYLLU BOTANICA - Atelier de Velas Artesanales",
+  "description": "Boutique de velas de lujo ecológicas de cera de soja, mecha de madera crujiente, esencias botánicas puras y asesor olfativo inteligente.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
